@@ -22,7 +22,7 @@ Most complaint dashboards rank by volume. This one ranks by churn risk instead �
 | sleep_accuracy | 2.0% | 25.0% |
 | bpi_fda | 1.0% | 0.0% |
 
-**Read this with one caveat in mind:** 65% of the sample comes from two Reddit threads, both about the 5.0 launch and subscription/pricing policy — so subscription's share here is inflated by thread selection, not necessarily representative of WHOOP's overall complaint mix. `amplitude_project/README.md` covers this in full, including exactly which threads, how they were weighted, and how the dbt model's Reddit-downweighting logic anticipates this bias.
+**Read this with one caveat in mind:** 65% of the sample comes from two Reddit threads, both about the 5.0 launch and subscription/pricing policy so subscription's share here is inflated by thread selection, not necessarily representative of WHOOP's overall complaint mix. `amplitude_project/README.md` covers this in full, including exactly which threads, how they were weighted, and how the dbt model's Reddit-downweighting logic anticipates this bias.
 
 ## What's in this repo
 
@@ -42,13 +42,13 @@ data/                    underlying JSON/CSV data behind the dashboard's charts
 
 Two parallel tracks feed this project, and both are labeled honestly throughout:
 
-- **`dbt_project/`** is illustrative scaffolding — it shows exactly how the churn-risk model (category tagging, churn-language detection, Reddit downweighting, revenue-at-risk scoring) would be built on WHOOP's real warehouse, but it isn't connected to one.
-- **`amplitude_project/`** is real. 152 individually-verifiable reviews were collected by hand, tagged the same way the dbt model tags them, and ingested as real events into Amplitude — which is what the live dashboard numbers above are actually querying.
+- **`dbt_project/`** is illustrative scaffolding; it shows exactly how the churn-risk model (category tagging, churn-language detection, Reddit downweighting, revenue-at-risk scoring) would be built on WHOOP's real warehouse, but it isn't connected to one.
+- **`amplitude_project/`** is real. 152 individually verifiable reviews were collected by hand, tagged the same way the dbt model tags them, and ingested as real events into Amplitude, which is what the live dashboard numbers above are actually querying.
 
 Full writeups, including data sources, sample-size caveats, and design decisions worth digging into, are in `dbt_project/README.md` and `amplitude_project/README.md`.
 
 ## About this project
 
-Built by Rutuja Hande out of genuine interest in how WHOOP's product and analytics teams think about churn risk — not assigned, not required, just a question that seemed worth actually answering instead of guessing at.
+Built by Rutuja Hande out of genuine interest in how WHOOP's product and analytics teams think about churn risk not assigned, not required, just a question that seemed worth actually answering instead of guessing at.
 
 [rutujahande09@gmail.com](mailto:rutujahande09@gmail.com)
