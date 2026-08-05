@@ -1,0 +1,22 @@
+{
+  "ios": {
+    "app_store_rating": 4.8,
+    "rating_count": 50000,
+    "complaint_mix": {
+      "product_ui_support": 68,
+      "os_level_sync_crash": 32
+    },
+    "source": "Apple App Store, WHOOP app id933944389 (as reported in sourced research, Aug 2026)"
+  },
+  "android": {
+    "app_store_rating": 4.77,
+    "rating_count": 24000,
+    "installs": "1.2M+",
+    "complaint_mix": {
+      "product_ui_support": 32,
+      "os_level_sync_crash": 68
+    },
+    "source": "Google Play (as reported in sourced research, Aug 2026); WHOOP support doc 'Frequent Android Disconnects' has no iOS equivalent"
+  },
+  "note": "Ratings are real, platform-reported figures from the underlying research. The complaint_mix percentages are an illustrative split calibrated to WHOOP's own Android-specific support documentation and engineering blog (wake-lock battery drain) versus iOS-specific complaints (UI/product/support) -- not from a raw category-tagged review count."
+}
