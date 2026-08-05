@@ -1,0 +1,100 @@
+{
+  "_note": "4 chart definitions, validated syntactically valid via Amplitude's verify_chart_definition (project 847885). They fail to QUERY right now only because the project has zero ingested events -- Amplitude requires properties to have real data before they're queryable, even if they exist in the tracking plan. Run ingest_synthetic_events.py --send first, then these can be queried, saved as permanent charts, and assembled into a dashboard.",
+  "charts": [
+    {
+      "name": "Review Volume by Complaint Category",
+      "purpose": "Mirrors dashboard.html's churn-risk bar chart's volume axis -- which of the 9 themes generates the most complaints.",
+      "definition": {
+        "app": "847885",
+        "type": "eventsSegmentation",
+        "name": "Review Volume by Complaint Category",
+        "vis": "bar",
+        "params": {
+          "range": "Last 365 Days",
+          "events": [
+            { "event_type": "Review Submitted", "filters": [], "group_by": [{ "type": "event", "value": "category" }] }
+          ],
+          "metric": "totals",
+          "countGroup": "User",
+          "groupBy": [],
+          "interval": 30,
+          "segments": [{ "conditions": [] }]
+        }
+      }
+    },
+    {
+      "name": "Churn-Language Share by Category",
+      "purpose": "The core churn-risk signal -- of each category's reviews, how many contain explicit cancel/switch/refund language. Combine with volume share (chart above) to compute the churn-risk index outside Amplitude, same formula as mart_complaint_churn_risk.sql.",
+      "definition": {
+        "app": "847885",
+        "type": "eventsSegmentation",
+        "name": "Churn-Language Share by Category",
+        "vis": "bar",
+        "params": {
+          "range": "Last 365 Days",
+          "events": [
+            {
+              "event_type": "Review Submitted",
+              "filters": [
+                { "group_type": "User", "subprop_type": "event", "subprop_key": "has_churn_language", "subprop_op": "is", "subprop_value": ["true"] }
+              ],
+              "group_by": [{ "type": "event", "value": "category" }]
+            }
+          ],
+          "metric": "totals",
+          "countGroup": "User",
+          "groupBy": [],
+          "interval": 1,
+          "segments": [{ "conditions": [] }]
+        }
+      }
+    },
+    {
+      "name": "Advanced Labs Launch Funnel",
+      "purpose": "Waitlist Joined -> Test Invited -> Test Completed -> Results Reviewed, the funnel defined in WHOOP_Healthcare_Product_Case_Study.docx section 2.",
+      "definition": {
+        "app": "847885",
+        "type": "funnels",
+        "name": "Advanced Labs Launch Funnel",
+        "params": {
+          "range": "Last 365 Days",
+          "events": [
+            { "event_type": "Waitlist Joined", "filters": [], "group_by": [] },
+            { "event_type": "Test Invited", "filters": [], "group_by": [] },
+            { "event_type": "Test Completed", "filters": [], "group_by": [] },
+            { "event_type": "Results Reviewed", "filters": [], "group_by": [] }
+          ],
+          "mode": "ordered",
+          "metric": "CONVERSION",
+          "conversionSeconds": 2592000,
+          "countGroup": "User",
+          "newOrActive": "active",
+          "eventAbstraction": "Event",
+          "nthTimeLookbackWindow": 365,
+          "segments": [{ "conditions": [] }]
+        }
+      }
+    },
+    {
+      "name": "Complaint Volume Over Time by Category",
+      "purpose": "Monthly complaint intensity per category, for overlaying against known events (5.0/MG launch, FDA letter, FDA closeout, homescreen redesign) -- mirrors the dashboard.html time series panel.",
+      "definition": {
+        "app": "847885",
+        "type": "eventsSegmentation",
+        "name": "Complaint Volume Over Time by Category",
+        "vis": "line",
+        "params": {
+          "range": "Last 365 Days",
+          "events": [
+            { "event_type": "Review Submitted", "filters": [], "group_by": [{ "type": "event", "value": "category" }] }
+          ],
+          "metric": "totals",
+          "countGroup": "User",
+          "groupBy": [],
+          "interval": 30,
+          "segments": [{ "conditions": [] }]
+        }
+      }
+    }
+  ]
+}

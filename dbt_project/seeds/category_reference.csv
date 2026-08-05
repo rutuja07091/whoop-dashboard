@@ -1,0 +1,10 @@
+category_id,category_name,owning_team,severity_1_5,keyword_pattern
+subscription,"Subscription, pricing, cancellation & support",General BI & Analytics,5,"cancel|refund|renew|subscription|billing|charged|contract|customer support|AI support"
+hardware,"Hardware reliability, device failure & charging",Hardware Product,5,"won't charge|not charging|dead sensor|stopped working|clasp|strap broke|battery pack"
+recovery_accuracy,"Recovery-score accuracy",Algorithms,3,"recovery score|doesn't match how I feel|recovery doesn't"
+strain_undercounting,"Strain score confusion & strength-training under-counting",Algorithms,4,"strain|weightlifting|strength training|muscular load"
+hr_accuracy,"Heart-rate accuracy, high-intensity/weightlifting",Algorithms,4,"heart rate|HR spike|HR drop|inaccurate HR"
+app_experience,"App experience: sync, crashes, redesign",General BI & Analytics,3,"sync|crash|disconnect|redesign|bluetooth"
+sleep_accuracy,"Sleep-tracking accuracy",Algorithms,2,"sleep tracking|didn't record my sleep|nap detection|wake time"
+band_durability,"Band/clasp durability & skin irritation",Hardware Product,2,"skin irritation|rash|burn|clasp broke|band broke"
+bpi_fda,"Blood Pressure Insights / FDA",Healthcare Product,5,"blood pressure|BPI|FDA|medical device"

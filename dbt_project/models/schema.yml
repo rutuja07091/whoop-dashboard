@@ -1,0 +1,57 @@
+version: 2
+
+sources:
+  - name: raw
+    description: Raw landing tables loaded by ELT jobs (Fivetran-style connectors or custom Python loaders) before any transformation.
+    tables:
+      - name: app_store_reviews
+        description: Raw Apple App Store reviews for the WHOOP app (id933944389), loaded from the public customer-reviews RSS/JSON feed.
+        columns:
+          - name: review_id
+            tests: [unique, not_null]
+      - name: google_play_reviews
+        description: Raw Google Play reviews for the WHOOP app, loaded via a scheduled scrape/export job.
+        columns:
+          - name: review_id
+            tests: [unique, not_null]
+      - name: trustpilot_reviews
+        description: Raw Trustpilot reviews for whoop.com (~200+ pages / several thousand reviews as of Aug 2026).
+        columns:
+          - name: review_id
+            tests: [unique, not_null]
+      - name: reddit_posts
+        description: Raw r/whoop posts pulled from Reddit's public listing API.
+        columns:
+          - name: post_id
+            tests: [unique, not_null]
+
+models:
+  - name: int_review_categorized
+    description: Each review tagged into one or more of the 9 complaint categories, with a churn-language flag.
+    columns:
+      - name: category_id
+        tests:
+          - accepted_values:
+              values: ['subscription','hardware','recovery_accuracy','strain_undercounting',
+                       'hr_accuracy','app_experience','sleep_accuracy','band_durability','bpi_fda']
+      - name: star_rating
+        tests:
+          - accepted_values:
+              values: [1,2,3,4,5]
+
+  - name: mart_complaint_churn_risk
+    description: >
+      One row per complaint category, ranked by churn-risk index (0-100) and
+      illustrative annual revenue at risk. Primary table behind the executive
+      dashboard's ranking and revenue-exposure panels.
+    columns:
+      - name: category_id
+        tests: [unique, not_null]
+      - name: churn_risk_index_0_100
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 100
+
+  - name: mart_complaint_timeseries
+    description: Monthly complaint-volume index per category for overlaying against known product/regulatory events.

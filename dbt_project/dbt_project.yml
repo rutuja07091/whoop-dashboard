@@ -1,0 +1,21 @@
+name: 'whoop_complaint_churn_risk'
+version: '1.0.0'
+config-version: 2
+
+profile: 'whoop_analytics'
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  whoop_complaint_churn_risk:
+    staging:
+      +materialized: view
+      +schema: staging
+    intermediate:
+      +materialized: view
+      +schema: intermediate
+    marts:
+      +materialized: table
+      +schema: analytics

@@ -1,0 +1,2 @@
+total_members,avg_annual_revenue_per_member_usd,illustrative_churn_rate_pct,assumption_note
+2500000,440,3.0,"Illustrative, tunable assumption representing the share of the 2.5M member base whose churn is plausibly attributable to complaint themes in a given year. NOT an observed WHOOP churn figure -- WHOOP reports 'record low churn' overall. Replace with a measured attrition rate once cohort-level cancellation data is available in the warehouse."

@@ -1,0 +1,2341 @@
+{
+  "_meta": {
+    "collected": "2026-08-02, via live web fetch (App Store, Google Play) and user-collected copy/paste (Trustpilot)",
+    "sources": [
+      "https://apps.apple.com/us/app/whoop/id933944389",
+      "https://apps.apple.com/us/app/933944389?see-all=reviews&platform=iphone",
+      "https://play.google.com/store/apps/details?id=com.whoop.android&hl=en_US",
+      "https://www.trustpilot.com/review/whoop.com (1-star filter, Most recent sort, 20 reviews)",
+      "https://www.trustpilot.com/review/whoop.com (5-star filter, Most recent sort, 20 reviews)",
+      "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/ (danfar93's 'Upvote this if you cancelled your Whoop subscription!' megathread, user-collected via copy/paste since Reddit is blocked for direct fetch from this environment)",
+      "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/ (former WHOOP CPO Ben Foster's public defense of the 5.0 upgrade policy + reaction; user-collected. Only a curated 28-comment subset of this ~100-comment thread was processed, selected for distinct signal rather than exhaustively, since the sample was already at the credible 100-150 target before this thread.)"
+    ],
+    "honesty_note": "53 real, individually-verifiable reviews: 10 Apple App Store, 3 Google Play, 40 Trustpilot (20x 1-star, 20x 5-star, user-collected since Trustpilot is blocked for direct fetch from this environment). Star ratings are real for the Trustpilot batch (the page itself is filtered by star count) but were not recoverable for the App Store batch (icons, not text, in the scrape). category and has_churn_language were assigned by actually reading each review's real text against the same keyword logic as int_review_categorized.sql (cancel/canceled/switch(ed) to/refund/won't renew/return process), not by random assignment or modeling. 53 is still a real, small-to-modest sample -- enough to compute directional real percentages, not a statistically robust population estimate. One review (real_031, 'Just seen a Whoop commercial') is off-topic noise (a joke about an ad, not a product complaint) and is deliberately left with an empty category list rather than force-fit or dropped -- that's what a real reviewer sample actually looks like. Update: 73 additional real entries (1 post + 72 comments) added from a single real Reddit thread -- the actual megathread previously cited only secondhand in the original research (as '2,400 upvotes'; the real, verified count is 3,000 upvotes / 250 downvotes). Comment dates are approximate: Reddit only exposed relative timestamps ('1y ago') for comments, not exact dates, so dates here are sequenced across the thread's real, confirmed active window (the post is corroborated by a real Bloomberg article dated 2025-05-09, linked inside the thread itself: bloomberg.com/news/articles/2025-05-09/whoop-faces-backlash-after-charging-existing-users-upgrade-fee-for-new-models).",
+    "attempted_and_blocked_or_failed": [
+      "BBB complaints page -- returned empty (likely JS-rendered / bot-protected); not yet collected manually",
+      "Apple's older RSS/JSON review feed (itunes.apple.com/.../json) -- returned empty across 3 URL variants"
+    ]
+  },
+  "reviews": [
+    {
+      "id": "real_001",
+      "platform": "iOS",
+      "author": "TDYmannn",
+      "date": "2025-07-02",
+      "title": "No Support For Broken App",
+      "text": "I have my grievances with the algorithm still underreporting strain for functional fitness and always demanding I sleep 9 hours despite full recovery and more than enough restorative sleep at 7.5 hours. I disagree, but fine, I still find the data useful. What I can't forgive is broken app features that 'support' says could be fixed by a future update... 'App settings' tab redirects me to profile.",
+      "categories": [
+        "strain_undercounting",
+        "app_experience",
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null
+    },
+    {
+      "id": "real_002",
+      "platform": "iOS",
+      "author": "efeagler",
+      "date": "2021-06-24",
+      "title": "Hits and Misses!",
+      "text": "I've been using Whoop for a year and don't think I'll renew my membership... the sensor is most effective in static situations vs dynamic movements... haven't seen any correlation between recovery and quality sleep... Walled garden.",
+      "categories": [
+        "subscription",
+        "hr_accuracy",
+        "recovery_accuracy"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null
+    },
+    {
+      "id": "real_003",
+      "platform": "iOS",
+      "author": "NorahK123",
+      "date": "2025-01-14",
+      "title": "What is going on lately???",
+      "text": "recent connectivity and app malfunctions are really getting in the way... It consistently disconnects from Bluetooth mid workout... trouble with strength trainer... I hope these issues are fixed soon or I will have to end my subscription.",
+      "categories": [
+        "app_experience",
+        "hr_accuracy",
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null
+    },
+    {
+      "id": "real_004",
+      "platform": "iOS",
+      "author": "Burddog33",
+      "date": "2026-06-16",
+      "title": "Expensive, dishonest & disappointing",
+      "text": "After I got deeply frustrated with the 5.0, I cancelled my membership... you paid ~$450/year, so you'd never have to pay for upgrades. Not with the 5.0!... it helped make my decision to stop using it feel more solid.",
+      "categories": [
+        "subscription",
+        "hardware",
+        "strain_undercounting"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null
+    },
+    {
+      "id": "real_005",
+      "platform": "iOS",
+      "author": "Dad Hopes",
+      "date": "2026-07-26",
+      "title": "Bullied / educated by my number",
+      "text": "since using WHOOP, my average hours per night is over 7.5 hrs. It has educated and improved my health by bringing metrics like HRV and accurate RHR.",
+      "categories": [
+        "recovery_accuracy"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null
+    },
+    {
+      "id": "real_006",
+      "platform": "iOS",
+      "author": "FindYourPurple",
+      "date": "2026-07-07",
+      "title": "I'm getting to know my body!",
+      "text": "I didn't plan on keeping whoop more than a couple of months. But after having it I found it incredibly helpful to learn about my body.",
+      "categories": [
+        "recovery_accuracy"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null
+    },
+    {
+      "id": "real_007",
+      "platform": "iOS",
+      "author": "SDMUSICMAN",
+      "date": "2026-07-18",
+      "title": "7 years in",
+      "text": "I started using the strain coach each day, modified activities, quit drinking, prioritized sleep... I'm now in the shape of my life.",
+      "categories": [
+        "strain_undercounting"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null
+    },
+    {
+      "id": "real_008",
+      "platform": "iOS",
+      "author": "mb8190",
+      "date": "2026-07-30",
+      "title": "Very Technical",
+      "text": "I really like it's workout feature and AI... The only problem I have is with App's UX, it's not easy on the eye and checking simple things like steps is a bit over complicated.",
+      "categories": [
+        "app_experience"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null
+    },
+    {
+      "id": "real_009",
+      "platform": "iOS",
+      "author": "SoulStudy",
+      "date": "2026-07-24",
+      "title": "Helps my mental health",
+      "text": "Seeing the numbers has helped me to keep strong lifestyle habits of healthy sleep & exercise. The app just keeps getting better with the new AI features.",
+      "categories": [
+        "app_experience"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null
+    },
+    {
+      "id": "real_010",
+      "platform": "iOS",
+      "author": "Nordic Nemo",
+      "date": "2026-07-24",
+      "title": "Nordic Nemo",
+      "text": "Whoop has radically changed the routine of my wife and I for the better, especially our sleep.",
+      "categories": [
+        "recovery_accuracy"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null
+    },
+    {
+      "id": "real_011",
+      "platform": "Android",
+      "author": "Christian Ernst",
+      "date": "2024-08-30",
+      "title": null,
+      "text": "if you have tattoos, the device won't work or at least won't work well... They lean too heavily on AI and make it a pain to submit any help request. If it keeps up, I will be terminating my subscription.",
+      "categories": [
+        "hardware",
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": 106
+    },
+    {
+      "id": "real_012",
+      "platform": "Android",
+      "author": "Jon Johnson",
+      "date": "2025-11-07",
+      "title": null,
+      "text": "when I lost the battery for my old device, I couldn't buy a replacement, because only batteries for the new device were available... Needless to say, I canceled my subscription.",
+      "categories": [
+        "hardware",
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": 44
+    },
+    {
+      "id": "real_013",
+      "platform": "Android",
+      "author": "George Michael",
+      "date": "2025-01-02",
+      "title": null,
+      "text": "It's a good and detailed app but it can be hard to navigate round... journal Notes textarea to have to option to expand.",
+      "categories": [
+        "app_experience"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": 12
+    },
+    {
+      "id": "real_014",
+      "platform": "Trustpilot",
+      "author": "Ameer Shahid",
+      "country": "AE",
+      "date": "2026-08-01",
+      "title": "Garbage monitoring worse support",
+      "text": "My WHOOP silently died for two days. Bluetooth-only connection, never linked properly in the app, battery tanked to 0%, and their 'smart' app gave me ZERO alerts. Support's fix? Manually re-enter the data myself... Save your money.",
+      "categories": [
+        "hardware",
+        "app_experience",
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": 1,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_015",
+      "platform": "Trustpilot",
+      "author": "Matt Mehring",
+      "country": "US",
+      "date": "2026-07-31",
+      "title": "Whoop 5 does not support IPhone 7...",
+      "text": "Whoop 5 does not support IPhone 7 so if you have a whoop device and upgrade your phone whoop has no solution... I paid $360 for a year membership and now they won't refund or make it work. I recommend not joining Whoop.",
+      "categories": [
+        "hardware",
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": 1,
+      "helpful_count": 1
+    },
+    {
+      "id": "real_016",
+      "platform": "Trustpilot",
+      "author": "T J",
+      "country": "AE",
+      "date": "2026-07-31",
+      "title": "Ordered on WHOOP's website",
+      "text": "my order is still stuck on 'under process'... When I asked for a full refund, they said they'd follow up... I just want my money back at this point.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": 1,
+      "helpful_count": 1
+    },
+    {
+      "id": "real_017",
+      "platform": "Trustpilot",
+      "author": "Laura",
+      "country": "IT",
+      "date": "2026-07-31",
+      "title": "I have never written a review like this...",
+      "text": "My device was delivered today and has never worked, not even once... I was then told that the shipping fees would not be refunded, even though I received a product that has never functioned.",
+      "categories": [
+        "hardware",
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": 1,
+      "helpful_count": 1
+    },
+    {
+      "id": "real_018",
+      "platform": "Trustpilot",
+      "author": "Ameer Shahid",
+      "country": "AE",
+      "date": "2026-07-30",
+      "title": "This device is shit because it loses data",
+      "text": "This device is shit because it loses your tracking data and sync if bluetooth glitch happens... worst and most shitest tracker ive ever used.",
+      "categories": [
+        "hardware"
+      ],
+      "has_churn_language": false,
+      "star_rating": 1,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_019",
+      "platform": "Trustpilot",
+      "author": "Edolind Krasniqi",
+      "country": "CH",
+      "date": "2026-07-29",
+      "title": "Its a scam",
+      "text": "I paid 500 USD. I had to give my Bank Card Account for activating. I cant connect my device.",
+      "categories": [
+        "hardware",
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": 1,
+      "helpful_count": 1
+    },
+    {
+      "id": "real_020",
+      "platform": "Trustpilot",
+      "author": "Dylan Reher",
+      "country": "US",
+      "date": "2026-07-29",
+      "title": "Poor HRV, Sleep, and Subscription Model",
+      "text": "HRV absolutely does not give accurate data at all... it still gives me a green recovery score which completely contradicts how I feel... Sleep - the whoop tells me I have about 1.5 hours more of awake time each night [than Garmin]... I switched to Garmin which has a much more consistent HRV pattern and sleep tracking, and most importantly no subscription. The support website didn't offer me a refund.",
+      "categories": [
+        "hr_accuracy",
+        "recovery_accuracy",
+        "sleep_accuracy",
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": 1,
+      "helpful_count": 1
+    },
+    {
+      "id": "real_021",
+      "platform": "Trustpilot",
+      "author": "Julia Kami\u0144ska-\u015al\u0105zek",
+      "country": "PL",
+      "date": "2026-07-29",
+      "title": "Whoop support is a scam",
+      "text": "the AI support advised wrongly on how to prolong the subscription from the trial... then a human stepped in... I emailed with 4-5 different people... an absolute scam.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": 1,
+      "helpful_count": 1
+    },
+    {
+      "id": "real_022",
+      "platform": "Trustpilot",
+      "author": "adam marks",
+      "country": "GB",
+      "date": "2026-07-27",
+      "title": "Worst customer service i have ever...",
+      "text": "Worst customer service i have ever experienced in my life. Its mind blowing that they dont fix this.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": 1,
+      "helpful_count": 1
+    },
+    {
+      "id": "real_023",
+      "platform": "Trustpilot",
+      "author": "Andrew Case",
+      "country": "US",
+      "date": "2026-07-22",
+      "title": "Impossible to cancel the membership",
+      "text": "Impossible to cancel the membership. You can't cancel on the app itself and they throw you a ton of hoops and hurdles just to cancel it via email... totally excessive and predatory.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": 1,
+      "helpful_count": 1
+    },
+    {
+      "id": "real_024",
+      "platform": "Trustpilot",
+      "author": "Thomas Piercy",
+      "country": "GB",
+      "date": "2026-07-22",
+      "title": "Good luck cancelling - they just love to bill you regardless",
+      "text": "coming up to the 12 month mark I decided that I wouldn't renew... so I cancelled in advance... Whoop decided to bill me for a full year regardless... Had to get the bank involved to chargeback.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": 1,
+      "helpful_count": 1
+    },
+    {
+      "id": "real_025",
+      "platform": "Trustpilot",
+      "author": "troy hallinger",
+      "country": "US",
+      "date": "2026-07-21",
+      "title": "Just seen a Whoop commercial",
+      "text": "Just seen a Whoop commercial. People jumping into a frozen lake... I'm in amazing shape. Don't need your watch or your dumbass commercials.",
+      "categories": [],
+      "has_churn_language": false,
+      "star_rating": 1,
+      "helpful_count": 1,
+      "note": "off-topic / not a substantive product complaint -- left uncategorized rather than force-fit"
+    },
+    {
+      "id": "real_026",
+      "platform": "Trustpilot",
+      "author": "Sam",
+      "country": "GB",
+      "date": "2026-07-20",
+      "title": "The product itself is good but the worst customer service ever.",
+      "text": "The battery life is terrible... The AI Chatbot offered me the option to upgrade to annual... noted I could upgrade to the MG and pay the upgrade fee... customer service have since been refusing to allow me to do this and demanding extra payments.",
+      "categories": [
+        "hardware",
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": 1,
+      "helpful_count": 1
+    },
+    {
+      "id": "real_027",
+      "platform": "Trustpilot",
+      "author": "Jack Edgemond",
+      "country": "US",
+      "date": "2026-07-19",
+      "title": "Poor Build Quality & Bad Customer Service",
+      "text": "The SportFlex Bands are super poor quality. I had 2 break within a few months... there is no real benefit to knowing your stats. Once the novelty of it wears off, it's just seeing the same thing over and over.",
+      "categories": [
+        "band_durability",
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": 1,
+      "helpful_count": 1
+    },
+    {
+      "id": "real_028",
+      "platform": "Trustpilot",
+      "author": "oron",
+      "country": "US",
+      "date": "2026-07-19",
+      "title": "Have been trying to return my whoop for...",
+      "text": "Have been trying to return my whoop for a few months now, but their customer service team isnt letting me process the return. Don't buy it.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": 1,
+      "helpful_count": 1
+    },
+    {
+      "id": "real_029",
+      "platform": "Trustpilot",
+      "author": "Kareem Zidane",
+      "country": "EG",
+      "date": "2026-07-18",
+      "title": "One of the worst services you can ever...",
+      "text": "I have cancelled my membership a few years ago, and many many times at this point, but they keep attempting to renew it every year with no way to remove the payment method... they force you into a survey first to get your membership cancelled.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": 1,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_030",
+      "platform": "Trustpilot",
+      "author": "J L",
+      "country": "US",
+      "date": "2026-07-18",
+      "title": "I liked the device itself",
+      "text": "I completed the cancellation process, yet WHOOP continued attempting to charge my Apple Card. Finding the cancellation option was unnecessarily difficult.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": 1,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_031",
+      "platform": "Trustpilot",
+      "author": "edvinas scerbavicius",
+      "country": "GB",
+      "date": "2026-07-18",
+      "title": "I have a gift card voucher",
+      "text": "it is impossible to reedem [a gift card] against my subscription... seems like you talking with AI. i would advise do not buy whoop gift cards.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": 1,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_032",
+      "platform": "Trustpilot",
+      "author": "Henrik Bekker",
+      "country": "DK",
+      "date": "2026-07-18",
+      "title": "Bad service",
+      "text": "My better half didnt want it, so I wanted to return one of the whoops - the unused one. It was not possible as it was bought as 2 pairs... I never heard again.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": 1,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_033",
+      "platform": "Trustpilot",
+      "author": "A W",
+      "country": "GB",
+      "date": "2026-07-15",
+      "title": "I Cancelled My Trial. WHOOP Charged Me Anyway and Ignored Every Attempt to Fix It.",
+      "text": "I cancelled within the trial period, and WHOOP confirmed my cancellation... Twenty-one days after cancelling, WHOOP charged me AED 446.25 because the device hadn't been returned... I will now be pursuing a chargeback.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": 1,
+      "helpful_count": 1
+    },
+    {
+      "id": "real_034",
+      "platform": "Trustpilot",
+      "author": "Laura Lee",
+      "country": "US",
+      "date": "2026-07-28",
+      "title": "I can't say enough good",
+      "text": "their medical grade 5.0 data on sleep (confirmed accurate by NIH tests & my sleep dr) helped me finally get diagnosed... now we know I have mast cell disease. My providers are now recommending it to their other patients.",
+      "categories": [
+        "recovery_accuracy",
+        "sleep_accuracy"
+      ],
+      "has_churn_language": false,
+      "star_rating": 5,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_035",
+      "platform": "Trustpilot",
+      "author": "Dylan Benotto",
+      "country": "IT",
+      "date": "2026-07-22",
+      "title": "I trust WHOOP with my HRV tracking and...",
+      "text": "I trust WHOOP with my HRV tracking and it helped me improve my Sleep quality... the team needs to better manage Hardware Upgrades and ensure that the products are worth the premium and compatibility across bands.",
+      "categories": [
+        "hr_accuracy",
+        "hardware"
+      ],
+      "has_churn_language": false,
+      "star_rating": 5,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_036",
+      "platform": "Trustpilot",
+      "author": "Swarter",
+      "country": "FR",
+      "date": "2026-07-19",
+      "title": "Thanks a lot to Michael",
+      "text": "when I contact the customer to return the product Michael gift it to me and resend me the good one at no cost.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": 5,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_037",
+      "platform": "Trustpilot",
+      "author": "Sean G",
+      "country": "US",
+      "date": "2026-07-15",
+      "title": "I've had a WHOOP for probably 3+ years...",
+      "text": "Someone on their team ended up refunding it without the need for me to return it... in the times that my WHOOP has broken in the past (when I had the 4.0) they shipped me a new one at no cost. A great product and an excellent customer service team!",
+      "categories": [
+        "subscription",
+        "hardware"
+      ],
+      "has_churn_language": false,
+      "star_rating": 5,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_038",
+      "platform": "Trustpilot",
+      "author": "Kurt J",
+      "country": "US",
+      "date": "2026-07-13",
+      "title": "I am a huge long time fan",
+      "text": "Whoop has positively impacted my habits and life a great deal over many years. Great data, long battery life and decent AI coaching.",
+      "categories": [
+        "app_experience"
+      ],
+      "has_churn_language": false,
+      "star_rating": 5,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_039",
+      "platform": "Trustpilot",
+      "author": "J R",
+      "country": "US",
+      "date": "2026-07-12",
+      "title": "Data in Actions out",
+      "text": "all this great data is only useful if you act on it. It won't make you go to sleep on time and it won't make you do your strength workouts.",
+      "categories": [
+        "app_experience"
+      ],
+      "has_churn_language": false,
+      "star_rating": 5,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_040",
+      "platform": "Trustpilot",
+      "author": "Kim E",
+      "country": "DK",
+      "date": "2026-07-11",
+      "title": "Game hanger for my fitness progression",
+      "text": "Game hanger for my fitness progression and health.",
+      "categories": [
+        "app_experience"
+      ],
+      "has_churn_language": false,
+      "star_rating": 5,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_041",
+      "platform": "Trustpilot",
+      "author": "Jonathan C",
+      "country": "CA",
+      "date": "2026-07-10",
+      "title": "Love the product and company",
+      "text": "Use it everyday since 4 years to improve my health.",
+      "categories": [
+        "app_experience"
+      ],
+      "has_churn_language": false,
+      "star_rating": 5,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_042",
+      "platform": "Trustpilot",
+      "author": "Matthew Novozinsky",
+      "country": "US",
+      "date": "2026-07-10",
+      "title": "Fantastic I love whoop!",
+      "text": "Fantastic I love whoop!",
+      "categories": [
+        "app_experience"
+      ],
+      "has_churn_language": false,
+      "star_rating": 5,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_043",
+      "platform": "Trustpilot",
+      "author": "Moe Sal",
+      "country": "CA",
+      "date": "2026-07-11",
+      "title": "Still the best on the market",
+      "text": "I have tried Apple Watch, Oura 4, Fitbit Air, and Whoop 5/MG is still my favourite tracker by far... it almost always gets my sleep duration on point. Heart rate sensor and stress monitors are very accurate... Recovery and strain scores have completely changed how I approach exercise, rest, and nutrition. Apple Watch just wasn't as accurate... Oura is excellent too, but as someone who does strength training, I can't wear it.",
+      "categories": [
+        "sleep_accuracy",
+        "hr_accuracy",
+        "recovery_accuracy",
+        "strain_undercounting",
+        "app_experience"
+      ],
+      "has_churn_language": false,
+      "star_rating": 5,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_044",
+      "platform": "Trustpilot",
+      "author": "Brian P Mowbray",
+      "country": "US",
+      "date": "2026-07-09",
+      "title": "I have been using the Whoop device and...",
+      "text": "I find it to be very useful and informative with the information it gives me to help guide my health decisions!",
+      "categories": [
+        "recovery_accuracy"
+      ],
+      "has_churn_language": false,
+      "star_rating": 5,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_045",
+      "platform": "Trustpilot",
+      "author": "Mark Quinn",
+      "country": "GB",
+      "date": "2026-07-09",
+      "title": "Whoop",
+      "text": "waiting the WHOOP for over two years now, this helped me balance my health lifestyle and fitness, lightweight great battery life.",
+      "categories": [
+        "hardware"
+      ],
+      "has_churn_language": false,
+      "star_rating": 5,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_046",
+      "platform": "Trustpilot",
+      "author": "Ryan Merlin Bankhead",
+      "country": "US",
+      "date": "2026-07-08",
+      "title": "I needed data to get better",
+      "text": "I went from 50 sick days at work a year to zero in a couple of years using the data.",
+      "categories": [
+        "recovery_accuracy"
+      ],
+      "has_churn_language": false,
+      "star_rating": 5,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_047",
+      "platform": "Trustpilot",
+      "author": "R",
+      "country": "US",
+      "date": "2026-07-08",
+      "title": "I've had WHOOP for years now and the...",
+      "text": "the longer you use it, the better your analytics are... A few years ago, they lowered their prices during a time when prices are constantly increasing.",
+      "categories": [
+        "recovery_accuracy",
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": 5,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_048",
+      "platform": "Trustpilot",
+      "author": "Consumer",
+      "country": "DK",
+      "date": "2026-07-08",
+      "title": "It helps me in my daily life",
+      "text": "It helps me in my daily life.",
+      "categories": [
+        "app_experience"
+      ],
+      "has_churn_language": false,
+      "star_rating": 5,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_049",
+      "platform": "Trustpilot",
+      "author": "Mike",
+      "country": "US",
+      "date": "2026-07-07",
+      "title": "Best fitness tracker wearable",
+      "text": "Best fitness tracker wearable. Amazing insights and intuitive experiences.",
+      "categories": [
+        "app_experience"
+      ],
+      "has_churn_language": false,
+      "star_rating": 5,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_050",
+      "platform": "Trustpilot",
+      "author": "Dan Greisel",
+      "country": "US",
+      "date": "2026-07-07",
+      "title": "It's very accurate",
+      "text": "It's very accurate, lightweight, and gives good, detailed information. I've been using mine for several years.",
+      "categories": [
+        "recovery_accuracy",
+        "hr_accuracy"
+      ],
+      "has_churn_language": false,
+      "star_rating": 5,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_051",
+      "platform": "Trustpilot",
+      "author": "Shane Killpack",
+      "country": "US",
+      "date": "2026-07-07",
+      "title": "I want to maximize my health",
+      "text": "The Whoop encourages and manipulates me to improve weekly. I love it!",
+      "categories": [
+        "app_experience"
+      ],
+      "has_churn_language": false,
+      "star_rating": 5,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_052",
+      "platform": "Trustpilot",
+      "author": "Bill",
+      "country": "US",
+      "date": "2026-07-07",
+      "title": "Great data to maintain and improve my...",
+      "text": "Great data to maintain and improve my health.",
+      "categories": [
+        "app_experience"
+      ],
+      "has_churn_language": false,
+      "star_rating": 5,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_053",
+      "platform": "Trustpilot",
+      "author": "Jani Khan",
+      "country": "GB",
+      "date": "2026-07-07",
+      "title": "LOVE IT",
+      "text": "LOVE IT! Can't imagine life without Whoop.",
+      "categories": [
+        "app_experience"
+      ],
+      "has_churn_language": false,
+      "star_rating": 5,
+      "helpful_count": 0
+    },
+    {
+      "id": "real_054",
+      "platform": "Reddit",
+      "author": "danfar93",
+      "date": "2025-05-09",
+      "title": "Upvote this if you cancelled your Whoop subscription!",
+      "text": "Discussion post, r/whoop. Upvote 3,000 / Downvote 250.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": 3000,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_055",
+      "platform": "Reddit",
+      "author": "[deleted]",
+      "date": "2025-05-09",
+      "title": null,
+      "text": "I mean wtf. Congrats bro for your new sensor but your strength trainer still sucks, your log lacks of smart features e.g. why you asking me about commuting when I told just logged that I got a day off",
+      "categories": [
+        "strain_undercounting",
+        "app_experience"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_056",
+      "platform": "Reddit",
+      "author": "AsianWhalePump",
+      "date": "2025-05-09",
+      "title": null,
+      "text": "Glad I cancelled my Whoop 4 during the trial period in February. Got an Oura and am much happier!",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_057",
+      "platform": "Reddit",
+      "author": "danfar93",
+      "date": "2025-05-09",
+      "title": null,
+      "text": "It was actually the \u20ac11 shipping that sent me over the edge. I was about to upgrade to the MG and pay the \u20ac89 until I saw the \u20ac11 shipping",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_058",
+      "platform": "Reddit",
+      "author": "vrnvorona",
+      "date": "2025-05-09",
+      "title": null,
+      "text": "I mean Life sub is more expensive, it's common sense. For me it cut down from september to august, so not even that bad.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_059",
+      "platform": "Reddit",
+      "author": "Blackfalcon131313",
+      "date": "2025-05-10",
+      "title": null,
+      "text": "Contacted them as well - with 15 months left on my subscription and ready to lose five of them - asking for a waiver of the 100\u20ac fee for the MG. Reply was that there's nothing they can do.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_060",
+      "platform": "Reddit",
+      "author": "SamosaLover",
+      "date": "2025-05-10",
+      "title": null,
+      "text": "We got 100\u20ac shipping here in India lol",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_061",
+      "platform": "Reddit",
+      "author": "Blackfalcon131313",
+      "date": "2025-05-10",
+      "title": null,
+      "text": "Haha, exactly the same for me. I grudgingly put the MG into the cart and went through the entire process. Then, in the end: 11,99\u20ac shipping on top. F* this, I'm out...",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_062",
+      "platform": "Reddit",
+      "author": "[deleted]",
+      "date": "2025-05-10",
+      "title": null,
+      "text": "Just sent an e-mail to support requesting cancellation + refund. It's not about the money, I could've afforded it: it's a matter of principle now.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_063",
+      "platform": "Reddit",
+      "author": "Seapig23",
+      "date": "2025-05-10",
+      "title": null,
+      "text": "I agree and also sent a message about canceling my sub. Waiting to hear back.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_064",
+      "platform": "Reddit",
+      "author": "31Huncho",
+      "date": "2025-05-10",
+      "title": null,
+      "text": "Can you get a refund if you still have some months left?",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_065",
+      "platform": "Reddit",
+      "author": "Adventurous_Event_89",
+      "date": "2025-05-10",
+      "title": null,
+      "text": "I spoke with them via chat - they said its non refundable. Their whoop is going into recycling",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_066",
+      "platform": "Reddit",
+      "author": "missinggluten",
+      "date": "2025-05-11",
+      "title": null,
+      "text": "Ugh CANCELLED! Totally overwhelmed looking at Apple Watches\u2026 my whoop subscription ends in a month. What a shame",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_067",
+      "platform": "Reddit",
+      "author": "JG456789",
+      "date": "2025-05-11",
+      "title": null,
+      "text": "Get an Apple Watch Ultra 2. They are sick! Download the Athlytic app... it's only 30 bucks a year... Not sure why anyone would buy a whoop tbh",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_068",
+      "platform": "Reddit",
+      "author": "Adventurous_Event_89",
+      "date": "2025-05-11",
+      "title": null,
+      "text": "Yesss I ordered the Apple Watch Ultra, and cancelled my membership with this hack company",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_069",
+      "platform": "Reddit",
+      "author": "Melk_mir__",
+      "date": "2025-05-11",
+      "title": null,
+      "text": "Glad I didn't go with it. Would strongly recommend the Ultra bc of battery life. After one year my S7 needs to be recharged after like 16-18 hours",
+      "categories": [
+        "subscription",
+        "hardware"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_070",
+      "platform": "Reddit",
+      "author": "kubricksrubric",
+      "date": "2025-05-11",
+      "title": null,
+      "text": "Typical fitness tracker journey: Whoop -> Oura -> Whoop -> Garmin -> Apple Watch -> Fitbit? -> Garmin -> Whoop -> Apple Watch -> Fuck it, I'm going carnivore and wearing beaded bracelets. Anyone still a ride-or-die Whooper has Stockholm Syndrome; thoughts and prayers",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_071",
+      "platform": "Reddit",
+      "author": "Sub__Finem",
+      "date": "2025-05-11",
+      "title": null,
+      "text": "I don't want another screen in my life barking at me... I'm already forced to have a phone, I don't want a wearable that makes my phone inescapable. I also could never wear an Apple Watch to sleep.",
+      "categories": [
+        "hardware"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_072",
+      "platform": "Reddit",
+      "author": "Kto14",
+      "date": "2025-05-11",
+      "title": null,
+      "text": "I get that. I went to Garmin and have the fenix 6 pro solar... Can't help you in the sleep aspect, feels like sleeping in a regular watch.",
+      "categories": [
+        "subscription",
+        "hardware"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_073",
+      "platform": "Reddit",
+      "author": "bromandude707",
+      "date": "2025-05-12",
+      "title": null,
+      "text": "Got the Garmin forerunner 255 a few years ago after having a whoop for 3 years... The data was so similar... I don't pay a subscription. I feel like I won.",
+      "categories": [
+        "subscription",
+        "hr_accuracy"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_074",
+      "platform": "Reddit",
+      "author": "AD2446",
+      "date": "2025-05-12",
+      "title": null,
+      "text": "Been a member since 5 months. Do I get the whoop 5 next month for free or is this bs?",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_075",
+      "platform": "Reddit",
+      "author": "happydontwait",
+      "date": "2025-05-12",
+      "title": null,
+      "text": "Been a member for 2 years and it's not free. It's not free for anyone.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_076",
+      "platform": "Reddit",
+      "author": "Sub__Finem",
+      "date": "2025-05-12",
+      "title": null,
+      "text": "If there are other options out there that satisfy you, consider them. But after trying an Apple Watch and a Garmin, I kept coming back.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_077",
+      "platform": "Reddit",
+      "author": "Careless-Sir-6406",
+      "date": "2025-05-12",
+      "title": null,
+      "text": "bought an apple watch and just hated having another screen on my hand, then purchased a coros... but something about whoop had me coming back (most likely the no screen factor)",
+      "categories": [
+        "hardware"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_078",
+      "platform": "Reddit",
+      "author": "UKSpringbok",
+      "date": "2025-05-13",
+      "title": null,
+      "text": "I am writing to formally request a full refund for the unused portion of my annual membership, as Whoop has materially breached the advertised terms... 'Whoop members receive the next-generation device for free after having been a member for six months or more.' With the release of Whoop 5.0, you have unilaterally withdrawn that benefit... This change constitutes a breach of contract... I will escalate this to the UK Advertising Standards Authority, Trading Standards, and initiate a chargeback.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_079",
+      "platform": "Reddit",
+      "author": "flofloodlight",
+      "date": "2025-05-13",
+      "title": null,
+      "text": "I bought a Garmin. Better hardware with GPS, same data, no subscription, and more battery. Only drawback is that it's harder to wear a mechanical watch.",
+      "categories": [
+        "subscription",
+        "hardware"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_080",
+      "platform": "Reddit",
+      "author": "Careless-Sir-6406",
+      "date": "2025-05-13",
+      "title": null,
+      "text": "practically only reason i'm with whoop is bc there's no alternatives to a no-screen device and wearing a coros/garmin with a mechanical watch is just a no go",
+      "categories": [
+        "hardware"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_081",
+      "platform": "Reddit",
+      "author": "Competitive_Let_6148",
+      "date": "2025-05-13",
+      "title": null,
+      "text": "Even if my subscription ends on 16 Feb 2026 I went ahead and canceled it for renewal right now to make my message.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_082",
+      "platform": "Reddit",
+      "author": "ananondxb",
+      "date": "2025-05-13",
+      "title": null,
+      "text": "I'm not able to find an option to cancel renewal. Where do you see the option to do it?",
+      "categories": [
+        "subscription",
+        "app_experience"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_083",
+      "platform": "Reddit",
+      "author": "jemkoh",
+      "date": "2025-05-14",
+      "title": null,
+      "text": "This is what I got from customer service: 'To cancel your membership, head to app.whoop.com. Then, select Membership from the menu and find Cancel your Membership towards the bottom of the page.'",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_084",
+      "platform": "Reddit",
+      "author": "Misunderstoond",
+      "date": "2025-05-14",
+      "title": null,
+      "text": "Switched to Garmin and get the same features for FREE, tracks HRV, tracks sleep, tracks recovery, tells you where your 'body battery' is at and more, best part, no need for a subscription",
+      "categories": [
+        "subscription",
+        "hr_accuracy"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_085",
+      "platform": "Reddit",
+      "author": "[deleted]",
+      "date": "2025-05-14",
+      "title": null,
+      "text": "The sleep tracking is absolutely woeful on Garmin and as a result all the recovery stats are usually wrong. I have a Garmin but also a Whoop because of this.",
+      "categories": [
+        "sleep_accuracy",
+        "recovery_accuracy"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_086",
+      "platform": "Reddit",
+      "author": "Aznpersuasion16",
+      "date": "2025-05-14",
+      "title": null,
+      "text": "cancelled mine. going back to apple watch and trying bevel",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_087",
+      "platform": "Reddit",
+      "author": "Apprehensive_Art1300",
+      "date": "2025-05-14",
+      "title": null,
+      "text": "Cancelled my 4.0 trial. It arrived today, returned it unopened. Will never trust a company as shady as this.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_088",
+      "platform": "Reddit",
+      "author": "ajnails",
+      "date": "2025-05-15",
+      "title": null,
+      "text": "Scammy company- I hope many people order and then cancel.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_089",
+      "platform": "Reddit",
+      "author": "SWGR_ath",
+      "date": "2025-05-15",
+      "title": null,
+      "text": "Cancel this morning. 12th of January my service will end.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_090",
+      "platform": "Reddit",
+      "author": "Born-Duty1335",
+      "date": "2025-05-15",
+      "title": null,
+      "text": "For those looking for alternatives, we're building reThrive, a Personal Health OS. Key ideas include true data ownership, a one-time payment tier (no endless subs for basics), and support for many wearables (WHOOP, no-screen Polar360 etc.)",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_091",
+      "platform": "Reddit",
+      "author": "shaqal",
+      "date": "2025-05-15",
+      "title": null,
+      "text": "Greed will kill a good device. Sad but true.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_092",
+      "platform": "Reddit",
+      "author": "Seen-Short-Film",
+      "date": "2025-05-15",
+      "title": null,
+      "text": "Definitely seems like false advertising to pull a change like this... it would be nice if there was a class action false advertising suit.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_093",
+      "platform": "Reddit",
+      "author": "Puzzled-Caregiver-15",
+      "date": "2025-05-16",
+      "title": null,
+      "text": "They are going to lose a lot of customers over this. I still have 6 months left on my term and I'm definitely not paying $50 for a device that's only 7% smaller.",
+      "categories": [
+        "subscription",
+        "hardware"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_094",
+      "platform": "Reddit",
+      "author": "brokeboy321",
+      "date": "2025-05-16",
+      "title": null,
+      "text": "Canceled \u2705",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_095",
+      "platform": "Reddit",
+      "author": "Turbulent_Struggle_2",
+      "date": "2025-05-16",
+      "title": null,
+      "text": "Bought a Apple 9 in February. Wish I did it a year earlier.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_096",
+      "platform": "Reddit",
+      "author": "lazyking218",
+      "date": "2025-05-16",
+      "title": null,
+      "text": "Canceled just now.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_097",
+      "platform": "Reddit",
+      "author": "alfahim90",
+      "date": "2025-05-17",
+      "title": null,
+      "text": "I'm actually feeling bad for all the people after reading all the posts. Guess I'm canceling as well, not every one is rich. I have bought lots of bands as well which are not compatible with the new version.",
+      "categories": [
+        "subscription",
+        "band_durability"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_098",
+      "platform": "Reddit",
+      "author": "reddituserVibez",
+      "date": "2025-05-17",
+      "title": null,
+      "text": "Ordered the MG but with mixed feelings tbh..",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_099",
+      "platform": "Reddit",
+      "author": "SevenAImighty",
+      "date": "2025-05-17",
+      "title": null,
+      "text": "Oh you mean the one with the 5 new features for the MEDICAL GRADE upgrade and 60% 'non medical' disclaimers? Make it make sense. Most ppl using it likely 1) are not poor 2) have health care and 3) are fit... It just seems like an abuse of our desire for data.",
+      "categories": [
+        "bpi_fda"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_100",
+      "platform": "Reddit",
+      "author": "TristanTheRobloxian3",
+      "date": "2025-05-17",
+      "title": null,
+      "text": "yep this checks out. i got the mg because it effectively costed the same as what i was paying before, could afford it, and cus data is cool",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_101",
+      "platform": "Reddit",
+      "author": "Wetwire",
+      "date": "2025-05-17",
+      "title": null,
+      "text": "I need to see a bicep band for the mg before I would consider it.",
+      "categories": [
+        "hardware"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_102",
+      "platform": "Reddit",
+      "author": "Sealion_31",
+      "date": "2025-05-18",
+      "title": null,
+      "text": "I have many chronic illnesses and also health anxiety so data is very helpful for me. Especially as I try out different meds, physical therapy and treatments.",
+      "categories": [
+        "recovery_accuracy"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_103",
+      "platform": "Reddit",
+      "author": "Deep-Television-9756",
+      "date": "2025-05-18",
+      "title": null,
+      "text": "Cancel it. Send a message. You don't need it yet.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_104",
+      "platform": "Reddit",
+      "author": "_boredInMicro_",
+      "date": "2025-05-19",
+      "title": null,
+      "text": "I came back to whoop this year after 3years, still have about 8months on the subscription. Won't renew - simply too expensive for what you get, and the new software UI sucks. No idea why they changed it.",
+      "categories": [
+        "subscription",
+        "app_experience"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_105",
+      "platform": "Reddit",
+      "author": "[deleted]",
+      "date": "2025-05-19",
+      "title": null,
+      "text": "Just canceled BOTH mine and my spouses subscriptions. Garmin it is",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_106",
+      "platform": "Reddit",
+      "author": "marioada",
+      "date": "2025-05-19",
+      "title": null,
+      "text": "Just cancelled. I can no longer trust a word they say.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_107",
+      "platform": "Reddit",
+      "author": "EvilTeacher-34",
+      "date": "2025-05-19",
+      "title": null,
+      "text": "I am not returning even if they send me the new device. F this bs company!",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_108",
+      "platform": "Reddit",
+      "author": "ClowdyRowdy",
+      "date": "2025-05-20",
+      "title": null,
+      "text": "I tried to cancel in December and get a pro-rated refund\u2026 they said 'nope' you have until June 27th and then we won't renew even though I chose the monthly plan.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_109",
+      "platform": "Reddit",
+      "author": "Training_Singer3925",
+      "date": "2025-05-20",
+      "title": null,
+      "text": "This subscription policy is just ridiculous. Canceled my sub yesterday. Does anyone know good alternatives?",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_110",
+      "platform": "Reddit",
+      "author": "Whole-Code8600",
+      "date": "2025-05-20",
+      "title": null,
+      "text": "How do I cancel? If I do they say 'Cancelling your WHOOP membership disables the ability to upload new data from your Strap. Existing data will continue to remain available and accessible.' I still have 4 months and will use it over that time.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_111",
+      "platform": "Reddit",
+      "author": "juicebox03",
+      "date": "2025-05-20",
+      "title": null,
+      "text": "It still works until your renewal. They are just scummy bitches and make it confusing.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_112",
+      "platform": "Reddit",
+      "author": "Telku_",
+      "date": "2025-05-21",
+      "title": null,
+      "text": "I don't think I'll renew my subscription. As much as I like it. I don't like having to keep the app open just to get insights each day.",
+      "categories": [
+        "subscription",
+        "app_experience"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_113",
+      "platform": "Reddit",
+      "author": "theolm_",
+      "date": "2025-05-22",
+      "title": null,
+      "text": "How can I cancel the subscription? I could not find it in the app",
+      "categories": [
+        "subscription",
+        "app_experience"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_114",
+      "platform": "Reddit",
+      "author": "IBalajii",
+      "date": "2025-05-23",
+      "title": null,
+      "text": "I cancelled my whoop membership yesterday after realising everything was lie from whoop.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_115",
+      "platform": "Reddit",
+      "author": "ReasonSuspicious7267",
+      "date": "2025-05-24",
+      "title": null,
+      "text": "Cancelled mine a couple hours ago.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_116",
+      "platform": "Reddit",
+      "author": "leDanielx2",
+      "date": "2025-05-25",
+      "title": null,
+      "text": "Side note, I cancelled whoop a few months ago and haven't been asked to return the damn thing. Anyone else have this happen?",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_117",
+      "platform": "Reddit",
+      "author": "No-Championship7283",
+      "date": "2025-05-26",
+      "title": null,
+      "text": "About to cancel mine. My renewal is July",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_118",
+      "platform": "Reddit",
+      "author": "Independent-Tree-997",
+      "date": "2025-05-27",
+      "title": null,
+      "text": "Cancelled!",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_119",
+      "platform": "Reddit",
+      "author": "NoSoupForYou1985",
+      "date": "2025-05-28",
+      "title": null,
+      "text": "I've been a member since 2019. Loved the product, but f this s. With the money I've paid over the 6 years I could've bought 1 AW a year... I just requested a refund... We should set up a class action lawsuit for misrepresentation.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_120",
+      "platform": "Reddit",
+      "author": "rinroc82",
+      "date": "2025-05-29",
+      "title": null,
+      "text": "I canceled my subscription today. I was set to renew in 4 days... I reached out to Whoop this morning to see if they could offset the cost of the upgrade fee... They said there was nothing they could do. Whoop deciding there was nothing they could do is what drove me to cancel... we're off to find a new health tracker.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_121",
+      "platform": "Reddit",
+      "author": "us3r_unkn0wn",
+      "date": "2025-05-30",
+      "title": null,
+      "text": "Canceled my subscription today. I was already on the fence about paying such a high subscription fee. I will not pay a company that deceives me.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_122",
+      "platform": "Reddit",
+      "author": "Nemu66",
+      "date": "2025-06-01",
+      "title": null,
+      "text": "I also am disappointed that the band changed 1/16 of an inch smaller... So all my 4.0 bands won't work. That's a very shifty business practice... I feel it's just a scam to sell more bands.",
+      "categories": [
+        "band_durability",
+        "hardware"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_123",
+      "platform": "Reddit",
+      "author": "nhalia",
+      "date": "2025-06-02",
+      "title": null,
+      "text": "User on and off since 2021. I just cancelled. Not only does the shadiness of deleting the free hardware upgrades off their site piss me off, but the fact that the 5.0 is barely smaller than the 4.0, and can't fit any of the bands I already own. Talk about a cash grab.",
+      "categories": [
+        "subscription",
+        "band_durability"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_124",
+      "platform": "Reddit",
+      "author": "canadian_butthole",
+      "date": "2025-06-03",
+      "title": null,
+      "text": "I'm probably going with Garmin after my subscription ends in July.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kie1lp/upvote_this_if_you_cancelled_your_whoop/"
+    },
+    {
+      "id": "real_125",
+      "platform": "Reddit",
+      "author": "Temporary_Debt8132",
+      "date": "2025-05-14",
+      "title": "Thoughts on 5.0 Upgrade from Ben Foster, former Chief Product Officer at Whoop",
+      "text": "I am the former CPO at Whoop (2020-2022)... If you were intending to pay for your Whoop subscription indefinitely and you continue to, then you will literally pay $0 more... The only people for whom it matters are those who had an intention of canceling their subscription, anyway.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": 1900,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_126",
+      "platform": "Reddit",
+      "author": "sontino",
+      "date": "2025-05-14",
+      "title": null,
+      "text": "Can you please explain why they also feel the need to marginally change the dimensions so that bands and accessories need to be re-purchased? I assume this is also a core tenet of profitability\u2026 planned obsolescence to drive new sales.",
+      "categories": [
+        "band_durability",
+        "hardware"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_127",
+      "platform": "Reddit",
+      "author": "lobster_roulette",
+      "date": "2025-05-14",
+      "title": null,
+      "text": "This is my number 1 issue. Beyond everything else, the form factor isn't changing enough to warrant throwing away all old straps and having to buy new ones. This is the part that feels scummiest to me.",
+      "categories": [
+        "band_durability"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_128",
+      "platform": "Reddit",
+      "author": "GumbysGumbo",
+      "date": "2025-05-14",
+      "title": null,
+      "text": "Not only do they monopolize the hardware and the subscription, but this company is sitting on the health data of MILLIONS of people to train their bespoke model. But they are pinching every penny along the way.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_129",
+      "platform": "Reddit",
+      "author": "-Istvan-5-",
+      "date": "2025-05-15",
+      "title": null,
+      "text": "Silence on this question is deafening. This is my reason for never renewing. Between my wife and I, we have invested in numerous bands, bras, clothing etc... Now? They are all just useless.",
+      "categories": [
+        "subscription",
+        "band_durability"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_130",
+      "platform": "Reddit",
+      "author": "ClimateFew2414",
+      "date": "2025-05-15",
+      "title": null,
+      "text": "The decision to require a re-up even if you had more than 12 months was made and they only backpedaled after backlash. That doesn't convey that they care about us users... now people don't want to renew because they feel betrayed.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_131",
+      "platform": "Reddit",
+      "author": "ElegantGrand8",
+      "date": "2025-05-15",
+      "title": null,
+      "text": "If I have been paying for whoop 4.0 since 2022 at US$30 a month, then I've paid approximately $830 USD. If this doesn't demonstrate user commitment then whoop is really out of touch with the loyal consumers it had.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_132",
+      "platform": "Reddit",
+      "author": "SFGetWeird",
+      "date": "2025-05-15",
+      "title": null,
+      "text": "I've been a member since Nov 2021 and paid wayyyy more than what my current whoop hardware is worth. With THE next upgrade, I'm out based on how they handled this. Insane move by them, probably the end of the company.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_133",
+      "platform": "Reddit",
+      "author": "smokeshowbaby",
+      "date": "2025-05-16",
+      "title": null,
+      "text": "WHOOP charges each user $200-300 per year even in years where they don't receive a device. For longtime customers, that means they've received something like $800-1000 since the last upgrade. That's 2x more than an Apple Watch.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_134",
+      "platform": "Reddit",
+      "author": "willowgoose",
+      "date": "2025-05-16",
+      "title": null,
+      "text": "A degraded app experience that feels deliberately exclusionary: sections of the app are now blurred out unless you're using the newest hardware... WHOOP's decision to make previous bands incompatible with newer models has left many users with sometimes dozens of now-useless bands.",
+      "categories": [
+        "subscription",
+        "app_experience",
+        "band_durability"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_135",
+      "platform": "Reddit",
+      "author": "MaTr82",
+      "date": "2025-05-16",
+      "title": null,
+      "text": "No-one should feel a lifelong commitment to a company. In 2 years of being a member, I've seen little innovation from Whoop. A company should earn my extended subscription, not make me extend in hope of some improvements coming.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_136",
+      "platform": "Reddit",
+      "author": "vargus21",
+      "date": "2025-05-16",
+      "title": null,
+      "text": "I ended my Whoop subscription 6 months ago so I don't have any anger towards the current decisions the company has made, I just like to keep up on what they are doing after having spent 5 years as a subscriber.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_137",
+      "platform": "Reddit",
+      "author": "Top_Anywhere_7861",
+      "date": "2025-05-17",
+      "title": null,
+      "text": "I bought the MG, yet if I'm unhappy and send it back I can get the 5.0 but I won't get my money back. How messed up is that? I haven't used the device for the time but I'm forced to pay for it as soon as it's added to my account.",
+      "categories": [
+        "subscription",
+        "hardware"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_138",
+      "platform": "Reddit",
+      "author": "olemiss36",
+      "date": "2025-05-17",
+      "title": null,
+      "text": "People expected whoop to honor the terms that existed when they signed up and not do a rug pull... what they did was a slap in the face to loyal customers.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_139",
+      "platform": "Reddit",
+      "author": "JWNSM",
+      "date": "2025-05-17",
+      "title": null,
+      "text": "For those considering cancelling, just a friendly reminder: the Whoop T&Cs allows you to cancel and receive the pro-rated amount of your subscription back any time there is a material change (as there was with this launch) by emailing Whoop support within 30 days of the change.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_140",
+      "platform": "Reddit",
+      "author": "indianwin2001",
+      "date": "2025-05-17",
+      "title": null,
+      "text": "The Quantified Scientist put out a preliminary review today and said he sees NO difference in HR accuracy from the 4.0 to the MG. In 4 years, no improvement in this? I wear whoop 4.0 and a Garmin Epix Pro and the HR accuracy is VERY different during training.",
+      "categories": [
+        "hr_accuracy"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_141",
+      "platform": "Reddit",
+      "author": "00DEADBEEF",
+      "date": "2025-05-18",
+      "title": null,
+      "text": "Whoop Peak is virtually the same as Whoop 4.0, they've just added Healthspan and Pace of Aging which are purely software features. Whoop One takes away Stress Monitor and Health Monitor which 4.0 members currently have.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_142",
+      "platform": "Reddit",
+      "author": "Potwell",
+      "date": "2025-05-18",
+      "title": null,
+      "text": "WHOOP's website promised free next-gen upgrades after six months when I bought my 4.0, a key reason I chose WHOOP. The new 12-month commitment or $49 fee for 5.0 contradicts this, feeling like a bait-and-switch. Unless they do or offer a refund, I'll cancel and switch devices.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_143",
+      "platform": "Reddit",
+      "author": "matebookxproi716512",
+      "date": "2025-05-18",
+      "title": null,
+      "text": "I am asked to just add another 260\u20ac onto my new 11 Month and 23 day subscription or shell out 70\u20ac for no tangible benefit... I even received an email promising me eligibility for a free upgrade due to my 12 month remaining subscription, only for that to get revoked a day later.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_144",
+      "platform": "Reddit",
+      "author": "dwb1310",
+      "date": "2025-05-19",
+      "title": null,
+      "text": "I now have no idea WHAT Whoop is even selling. Hardware? A service? Or just whatever drives the most short-term cash and year end profitability? I'll be watching closely... But until I do, I won't spend a penny.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_145",
+      "platform": "Reddit",
+      "author": "lilbikkie",
+      "date": "2025-05-19",
+      "title": null,
+      "text": "I have put a lot more money into my whoop subscription ($1,100 AUD over 25 months) and didn't reap the benefits of any tech updates throughout that time... (except AI, strength trainer that never worked and inaccurate steps).",
+      "categories": [
+        "subscription",
+        "app_experience",
+        "strain_undercounting"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_146",
+      "platform": "Reddit",
+      "author": "elkishdude",
+      "date": "2025-05-19",
+      "title": null,
+      "text": "The promise was broken and here's what you get from me: nothing. I'm not going to upgrade. I will keep the device I have and I'm sorry, the product doesn't deserve more money for me despite the benefits because the promise was broken.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_147",
+      "platform": "Reddit",
+      "author": "TechLover94",
+      "date": "2025-05-20",
+      "title": null,
+      "text": "I had 17 months remaining on my subscription and was prompted to re-up again. I've consistently been a member for 6 years... To not be shipped the device on launch day almost by default just felt like I've been cheering the company along all this time... and got nothing but an ask for more money.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_148",
+      "platform": "Reddit",
+      "author": "danlam",
+      "date": "2025-05-20",
+      "title": null,
+      "text": "In the past two years, we got a ChatGPT wrapper, a strength trainer feature that feels unfinished, and a step counter beta that is highly inaccurate... I will no longer be renewing.",
+      "categories": [
+        "subscription",
+        "app_experience",
+        "strain_undercounting"
+      ],
+      "has_churn_language": true,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_149",
+      "platform": "Reddit",
+      "author": "DrVurt",
+      "date": "2025-05-21",
+      "title": null,
+      "text": "The simple fact is that most people won't leave... The danger for whoop is someone with better regard and care for their customers comes and steals the niche market away. I have zero brand loyalty and will be waiting for a better option to come along.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_150",
+      "platform": "Reddit",
+      "author": "Grauax",
+      "date": "2025-05-21",
+      "title": null,
+      "text": "Now they have created a new tier of devices that forces you to pay an amount yearly for which you can buy lifelong devices that offer the same capabilities or better... ECG was offered by Samsung for instance close to 6 years ago already.",
+      "categories": [
+        "subscription",
+        "bpi_fda"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_151",
+      "platform": "Reddit",
+      "author": "Tminus35",
+      "date": "2025-05-22",
+      "title": null,
+      "text": "I wanted to extend my membership 24 months. Here is the response I received via email: 'Please know that only new members can select a 24-month membership when joining. However, if you're upgrading to WHOOP 5.0 or WHOOP MG, the 24-month option will not be available.' Loyalty is dead at Whoop and profits are the number one goal.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    },
+    {
+      "id": "real_152",
+      "platform": "Reddit",
+      "author": "BigMetal1",
+      "date": "2025-05-22",
+      "title": null,
+      "text": "Going to see how well they fare in Australia with the ACCC looking into them. The amount of coping around their blatant lies to get people to sign up is sickening.",
+      "categories": [
+        "subscription"
+      ],
+      "has_churn_language": false,
+      "star_rating": null,
+      "helpful_count": null,
+      "source_thread": "https://www.reddit.com/r/whoop/comments/1kkfg8a/thoughts_on_50_upgrade_from_ben_foster_former/"
+    }
+  ]
+}
