@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WHOOP Complaint-to-Churn Exposure Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#0b0d10; --panel:#14171c; --panel2:#1b1f26; --border:#2a2f37;
+    --text:#e8eaed; --muted:#9aa3ad; --accent:#ff6b4a; --accent2:#4ac1ff;
+    --good:#3ecf8e; --warn:#ffb84a; --bad:#ff5c5c;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.45;
+  }
+  header{
+    padding:28px 32px 18px; border-bottom:1px solid var(--border);
+    background:linear-gradient(180deg, #16191f 0%, #0b0d10 100%);
+  }
+  header h1{margin:0 0 6px; font-size:22px; letter-spacing:.2px;}
+  header p{margin:0; color:var(--muted); font-size:13.5px; max-width:900px;}
+  .wrap{padding:24px 32px 60px; max-width:1280px; margin:0 auto;}
+  .kpis{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:26px;}
+  .kpi{background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:16px 18px;}
+  .kpi .label{font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:8px;}
+  .kpi .value{font-size:24px; font-weight:600;}
+  .kpi .sub{font-size:12px; color:var(--muted); margin-top:4px;}
+  .grid2{display:grid; grid-template-columns:1.3fr 1fr; gap:18px; margin-bottom:18px;}
+  .panel{background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:18px 20px;}
+  .panel h2{margin:0 0 4px; font-size:15px;}
+  .panel .desc{font-size:12px; color:var(--muted); margin-bottom:14px;}
+  table{width:100%; border-collapse:collapse; font-size:12.8px;}
+  th,td{text-align:left; padding:7px 8px; border-bottom:1px solid var(--border);}
+  th{color:var(--muted); font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.04em;}
+  tr:last-child td{border-bottom:none;}
+  .pill{display:inline-block; padding:2px 8px; border-radius:99px; font-size:10.5px; font-weight:600;}
+  .pill.alg{background:#2a3b52; color:#8fc4ff;}
+  .pill.hw{background:#3a2a1a; color:#ffb46b;}
+  .pill.hc{background:#3a1a2a; color:#ff8fc0;}
+  .pill.gen{background:#233a2a; color:#7fe0a8;}
+  .filters{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;}
+  .filters button{
+    background:var(--panel2); border:1px solid var(--border); color:var(--text);
+    padding:6px 12px; border-radius:99px; font-size:12px; cursor:pointer;
+  }
+  .filters button.active{background:var(--accent); border-color:var(--accent); color:#1a0d08; font-weight:600;}
+  .quote{border-left:3px solid var(--accent2); padding:10px 12px; margin-bottom:10px; background:var(--panel2); border-radius:0 8px 8px 0;}
+  .quote .meta{font-size:11px; color:var(--muted); margin-bottom:4px;}
+  .quote .text{font-size:13px; font-style:italic;}
+  .note{font-size:11.5px; color:var(--muted); border-top:1px dashed var(--border); margin-top:14px; padding-top:10px;}
+  canvas{max-height:340px;}
+  .footer{color:var(--muted); font-size:11.5px; margin-top:24px; text-align:center;}
+  .rank-bar-label{font-size:12px;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>WHOOP Complaint-to-Churn Exposure Dashboard</h1>
+  <p>Ranks the nine recurring WHOOP complaint themes by <b>churn-risk exposure</b>, not raw volume, and translates that into illustrative annual revenue at risk. Built from sourced qualitative research (press, FDA filings, court filings, Trustpilot/App Store/Reddit quotes) plus a transparent, tunable quantitative model where raw review-volume data wasn't accessible. Closes with a Healthcare Product deep-dive (Advanced Labs launch funnel + a proposed BPI trust scorecard) &mdash; see the companion Healthcare Product case-study document for the full framework. See methodology note at the bottom of each panel.</p>
+</header>
+
+<div class="wrap">
+
+  <div class="kpis">
+    <div class="kpi">
+      <div class="label">Illustrative Revenue at Risk (annual)</div>
+      <div class="value" id="kpiRevenue">$33.0M</div>
+      <div class="sub">at a stated 3% complaint-driven churn assumption</div>
+    </div>
+    <div class="kpi">
+      <div class="label">#1 Churn-Risk Theme</div>
+      <div class="value" style="font-size:16px;">Subscription, pricing &amp; cancellation</div>
+      <div class="sub">51.2 churn-risk index &middot; 65% of its complaints carry cancel/switch language</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Member Base</div>
+      <div class="value">2.5M</div>
+      <div class="sub">$1.1B bookings run-rate, 103% YoY (Series G, Mar 2026)</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Volume &ne; Churn</div>
+      <div class="value" style="font-size:16px;">Accuracy complaints ~37% of volume, ~14% of churn-risk</div>
+      <div class="sub">recovery + strain + HR combined</div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h2>Churn-risk ranking by complaint theme</h2>
+      <div class="desc">Churn-risk index = complaint volume share &times; share of that theme's complaints containing explicit cancel/switch language, re-normalized to 100. Bar length = churn risk; label shows illustrative $ revenue at risk.</div>
+      <canvas id="churnBar"></canvas>
+      <div class="note">Volume shares and churn-language shares are analyst estimates calibrated to the sourced qualitative evidence (see Evidence panel) &mdash; not a raw scraped review count. Revenue-at-risk assumes 3% of the 2.5M base churns annually for complaint-attributable reasons (tunable; WHOOP itself reports "record low churn" overall, so treat this as a sensitivity scenario, not an observed figure).</div>
+    </div>
+    <div class="panel">
+      <h2>Volume vs. churn-intent quadrant</h2>
+      <div class="desc">X = share of total complaint volume. Y = % of that theme's complaints containing cancel/switch language. Bubble size = severity (1&ndash;5). Top-right = both loud and churn-driving.</div>
+      <canvas id="quadrant"></canvas>
+      <div class="note">This is the single most decision-relevant chart: themes in the upper-left (high volume, low churn intent &mdash; e.g. recovery accuracy) deserve UX/communication fixes; themes in the lower-right or far-right (lower volume, high churn intent &mdash; subscription, hardware, BPI/FDA) deserve retention and legal/compliance prioritization.</div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-bottom:18px;">
+    <h2>Complaint intensity over time, keyed to known events</h2>
+    <div class="desc">Illustrative relative index (0&ndash;100), calibrated month-by-month to the sourced pattern of press coverage, FDA filings, and forum/review activity described in the underlying research &mdash; not raw scraped counts (see caveat below).</div>
+    <canvas id="timeseries" style="max-height:380px;"></canvas>
+    <div class="note">Data note: a production version of this chart would replace the modeled index with actual daily/weekly review-volume counts pulled from the App Store RSS feed, Google Play, Trustpilot, and Reddit's public API once that pipeline exists. The shape here is calibrated to reflect what the sourced research documents (e.g. "spiked hardest May 2025," "remains live in 2026 Trustpilot reviews," FDA warning July 2025 &rarr; closeout June 2026) rather than independently measured.</div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel">
+      <h2>Platform split: iOS vs. Android</h2>
+      <div class="desc">Ratings are real, platform-reported figures. The complaint-type mix is a modeled split calibrated to WHOOP's own Android-only "Frequent Android Disconnects" support doc and engineering blog vs. iOS-specific UI/product/support complaints.</div>
+      <canvas id="platform"></canvas>
+      <table style="margin-top:12px;">
+        <tr><th></th><th>App rating</th><th># ratings</th></tr>
+        <tr><td>iOS (App Store)</td><td>4.80</td><td>~50,000</td></tr>
+        <tr><td>Android (Google Play)</td><td>4.77</td><td>~24,000 (1.2M+ installs)</td></tr>
+      </table>
+    </div>
+    <div class="panel">
+      <h2>Revenue exposure by theme &amp; likely owning team</h2>
+      <div class="desc">Mapped to WHOOP's Healthcare Product, Hardware Product, Algorithms, and General BI &amp; Analytics teams.</div>
+      <table id="revTable">
+        <thead><tr><th>Theme</th><th>Team</th><th>Churn-risk</th><th>$ at risk</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Evidence: sourced, verbatim complaint samples</h2>
+    <div class="desc">A best-effort real-data sample &mdash; curated, attributed quotes from press coverage, FDA/court filings, WHOOP's own community forum and support docs, and review platforms. Bulk scraping of the App Store/Google Play/Trustpilot/Reddit at scale was attempted but not reliably accessible from this environment (rate limits / bot protections); this is a transparent, sourced sample rather than a full corpus.</div>
+    <div class="filters" id="quoteFilters"></div>
+    <div id="quoteList"></div>
+  </div>
+
+  <div class="panel" style="margin-top:18px;">
+    <h2>Healthcare Product deep-dive: Advanced Labs launch funnel</h2>
+    <div class="desc">A single-domain case study for the Healthcare Product track. Only the waitlist figure and the two diagnostic-yield rates are WHOOP-published; activation/completion/engagement stages are illustrative assumptions showing where real event data would slot in. Full framework (North Star, guardrails, experiment design) in the companion Healthcare Product case-study document.</div>
+    <div class="grid2">
+      <div>
+        <canvas id="labsFunnel" style="max-height:280px;"></canvas>
+      </div>
+      <div>
+        <table>
+          <tr><th>Signal</th><th>Value</th><th>Status</th></tr>
+          <tr><td>Waitlist joined</td><td>350,000+</td><td><span class="pill hc">Real</span></td></tr>
+          <tr><td>Metabolic dysfunction signs (of tested)</td><td>22%</td><td><span class="pill hc">Real</span></td></tr>
+          <tr><td>Cardiometabolic risk factors (of tested)</td><td>~30%</td><td><span class="pill hc">Real</span></td></tr>
+          <tr><td>Proposed North Star</td><td colspan="2" style="font-style:italic;">90-day retention delta: tested vs. matched waitlisted-not-yet-tested members</td></tr>
+        </table>
+        <div class="note">Diagnostic yield tells us the tests are finding real signal in members' bodies. It does not yet tell us the feature moves retention &mdash; that's the gap the North Star above is designed to close.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:18px;">
+    <h2>BPI trust &amp; safety leading-indicator scorecard (proposed)</h2>
+    <div class="desc">The FDA warning letter (Jul 2025) was an external signal &mdash; nothing in the public record suggests an internal early-warning system caught it first. This is the scorecard a Healthcare Product Analyst could own instead.</div>
+    <table>
+      <tr><th>Leading indicator</th><th>Why it matters</th><th>Data source</th></tr>
+      <tr><td>BPI opt-in / opt-out rate over time</td><td>Drop in opt-in precedes complaints/press by weeks</td><td>Feature-flag / subscription events</td></tr>
+      <tr><td>Review sentiment mentioning BPI</td><td>Surfaces "inaccurate"/"misleading" language early</td><td>App Store Connect, Play Console, Trustpilot API</td></tr>
+      <tr><td>Support tickets tagged BPI accuracy/confusion</td><td>Earliest internal signal, ahead of external filings</td><td>Zendesk / support platform</td></tr>
+      <tr><td>External regulatory &amp; press mention volume</td><td>Closes the loop with the outside world</td><td>FDA.gov, news monitoring</td></tr>
+    </table>
+  </div>
+
+  <div class="footer">Prepared for WHOOP Business Intelligence &amp; Analytics &middot; data current through Aug 2026 &middot; all dollar figures are illustrative sensitivity estimates, clearly separated from sourced qualitative evidence. Companion document: WHOOP_Healthcare_Product_Case_Study.docx. Update: a larger, individually-sourced real dataset (152 real reviews/comments) was later collected and is computed live in Amplitude &mdash; see amplitude_project/README.md and the live dashboard for those numbers.</div>
+</div>
+
+<script>
+const CATEGORY_KPIS = {"assumptions": {"total_members": 2500000, "avg_annual_revenue_per_member_usd": 440, "illustrative_complaint_driven_annual_churn_rate_pct": 3.0}, "categories": [
+{"id":"subscription","name":"Subscription, pricing, cancellation & support","volume_share_pct":22,"churn_language_share_pct":65,"severity_1_5":5,"status":"Structural / ongoing","team":"General BI & Analytics / Growth","peak_event":"May 2025 upgrade-fee reversal","churn_risk_index_0_100":51.2,"illustrative_annual_revenue_at_risk_usd":16896000},
+{"id":"hardware","name":"Hardware reliability, device failure & charging","volume_share_pct":14,"churn_language_share_pct":45,"severity_1_5":5,"status":"Clustered at MG launch, persistent cross-gen","team":"Hardware Product","peak_event":"May 2025 MG launch failures","churn_risk_index_0_100":22.5,"illustrative_annual_revenue_at_risk_usd":7425000},
+{"id":"app_experience","name":"App experience: sync, crashes, redesign, platform split","volume_share_pct":12,"churn_language_share_pct":20,"severity_1_5":3,"status":"Android reliability + iOS redesign backlash","team":"AI Product / General","peak_event":"Oct 2025 homescreen revamp","churn_risk_index_0_100":8.6,"illustrative_annual_revenue_at_risk_usd":2838000},
+{"id":"recovery_accuracy","name":"Recovery-score accuracy (\"doesn't match how I feel\")","volume_share_pct":20,"churn_language_share_pct":8,"severity_1_5":3,"status":"Persistent / inherent to metric design","team":"Algorithms","peak_event":"None (chronic)","churn_risk_index_0_100":5.7,"illustrative_annual_revenue_at_risk_usd":1881000},
+{"id":"strain_undercounting","name":"Strain score confusion & strength-training under-counting","volume_share_pct":12,"churn_language_share_pct":10,"severity_1_5":4,"status":"Acknowledged, repeatedly patched","team":"Algorithms","peak_event":"Firmware updates (recurring)","churn_risk_index_0_100":4.3,"illustrative_annual_revenue_at_risk_usd":1419000},
+{"id":"hr_accuracy","name":"Heart-rate accuracy, high-intensity/weightlifting","volume_share_pct":10,"churn_language_share_pct":9,"severity_1_5":4,"status":"Acknowledged, improving, not resolved","team":"Algorithms","peak_event":"Firmware updates (recurring)","churn_risk_index_0_100":3.2,"illustrative_annual_revenue_at_risk_usd":1056000},
+{"id":"band_durability","name":"Band/clasp durability & skin irritation","volume_share_pct":4,"churn_language_share_pct":15,"severity_1_5":2,"status":"Recurring, lower severity","team":"Hardware Product","peak_event":"None (chronic)","churn_risk_index_0_100":2.1,"illustrative_annual_revenue_at_risk_usd":693000},
+{"id":"bpi_fda","name":"Blood Pressure Insights / FDA (MG-specific)","volume_share_pct":1,"churn_language_share_pct":35,"severity_1_5":5,"status":"Regulatorily resolved (Jun 2026); litigation pending","team":"Healthcare Product","peak_event":"Jul 2025 FDA warning letter","churn_risk_index_0_100":1.3,"illustrative_annual_revenue_at_risk_usd":429000},
+{"id":"sleep_accuracy","name":"Sleep-tracking accuracy","volume_share_pct":5,"churn_language_share_pct":6,"severity_1_5":2,"status":"Relative strength vs competitors, complaints persist","team":"Algorithms","peak_event":"None (chronic, low intensity)","churn_risk_index_0_100":1.1,"illustrative_annual_revenue_at_risk_usd":363000}
+]};
+
+const TIMESERIES = [
+{"month":"2025-01","subscription_billing_support":18,"hardware_reliability":12,"app_experience":22,"bpi_healthcare_regulatory":0,"accuracy_metrics_blended":40,"event":""},
+{"month":"2025-02","subscription_billing_support":18,"hardware_reliability":12,"app_experience":21,"bpi_healthcare_regulatory":0,"accuracy_metrics_blended":41,"event":""},
+{"month":"2025-03","subscription_billing_support":19,"hardware_reliability":13,"app_experience":22,"bpi_healthcare_regulatory":0,"accuracy_metrics_blended":40,"event":""},
+{"month":"2025-04","subscription_billing_support":20,"hardware_reliability":14,"app_experience":23,"bpi_healthcare_regulatory":0,"accuracy_metrics_blended":42,"event":""},
+{"month":"2025-05","subscription_billing_support":100,"hardware_reliability":90,"app_experience":30,"bpi_healthcare_regulatory":20,"accuracy_metrics_blended":48,"event":"WHOOP 5.0/MG launch + upgrade-fee reversal (2,400-upvote cancel post)"},
+{"month":"2025-06","subscription_billing_support":55,"hardware_reliability":45,"app_experience":26,"bpi_healthcare_regulatory":25,"accuracy_metrics_blended":47,"event":""},
+{"month":"2025-07","subscription_billing_support":42,"hardware_reliability":30,"app_experience":24,"bpi_healthcare_regulatory":70,"accuracy_metrics_blended":46,"event":"FDA warning letter re: Blood Pressure Insights"},
+{"month":"2025-08","subscription_billing_support":40,"hardware_reliability":25,"app_experience":23,"bpi_healthcare_regulatory":55,"accuracy_metrics_blended":45,"event":""},
+{"month":"2025-09","subscription_billing_support":38,"hardware_reliability":22,"app_experience":25,"bpi_healthcare_regulatory":45,"accuracy_metrics_blended":44,"event":""},
+{"month":"2025-10","subscription_billing_support":37,"hardware_reliability":20,"app_experience":45,"bpi_healthcare_regulatory":40,"accuracy_metrics_blended":43,"event":"App homescreen redesign"},
+{"month":"2025-11","subscription_billing_support":36,"hardware_reliability":19,"app_experience":38,"bpi_healthcare_regulatory":38,"accuracy_metrics_blended":43,"event":"Rowe v. Whoop class action filed"},
+{"month":"2025-12","subscription_billing_support":35,"hardware_reliability":18,"app_experience":32,"bpi_healthcare_regulatory":35,"accuracy_metrics_blended":42,"event":""},
+{"month":"2026-01","subscription_billing_support":34,"hardware_reliability":17,"app_experience":30,"bpi_healthcare_regulatory":34,"accuracy_metrics_blended":42,"event":""},
+{"month":"2026-02","subscription_billing_support":36,"hardware_reliability":18,"app_experience":29,"bpi_healthcare_regulatory":32,"accuracy_metrics_blended":41,"event":""},
+{"month":"2026-03","subscription_billing_support":38,"hardware_reliability":19,"app_experience":28,"bpi_healthcare_regulatory":30,"accuracy_metrics_blended":41,"event":""},
+{"month":"2026-04","subscription_billing_support":35,"hardware_reliability":18,"app_experience":27,"bpi_healthcare_regulatory":29,"accuracy_metrics_blended":40,"event":""},
+{"month":"2026-05","subscription_billing_support":34,"hardware_reliability":17,"app_experience":26,"bpi_healthcare_regulatory":28,"accuracy_metrics_blended":40,"event":""},
+{"month":"2026-06","subscription_billing_support":33,"hardware_reliability":17,"app_experience":26,"bpi_healthcare_regulatory":20,"accuracy_metrics_blended":40,"event":"FDA closes BPI warning letter"},
+{"month":"2026-07","subscription_billing_support":35,"hardware_reliability":18,"app_experience":27,"bpi_healthcare_regulatory":22,"accuracy_metrics_blended":41,"event":""}
+];
+
+const PLATFORM = {"ios":{"complaint_mix":{"product_ui_support":68,"os_level_sync_crash":32}},"android":{"complaint_mix":{"product_ui_support":32,"os_level_sync_crash":68}}};
+
+const QUOTES = [
+{"category":"subscription","date":"2025-05-08","platform":"Reddit","source":"Reddit (via TechRadar)","quote":"Upvote this if you just canceled your subscription","signal":"2,400 upvotes"},
+{"category":"subscription","date":"2025-05-08","platform":"X/Twitter","source":"Digital Trends","quote":"The Whoop 5.0 launch feels like extortion! I've been subscribed for over 4 years and now I have to shell out more money for something that was meant to be a free upgrade!","signal":"4-yr subscriber, @BrandonVanB"},
+{"category":"subscription","date":"2026-03-29","platform":"Trustpilot","source":"Trustpilot","quote":"When I tried to cancel, they suddenly wanted $335 for 8 additional months I never knowingly agreed to.","signal":"cancellation billing dispute"},
+{"category":"subscription","date":"2026","platform":"Trustpilot","source":"Trustpilot","quote":"It is absolutely impossible to cancel your membership. I've looked everywhere on my membership page on my browser and in the app and cannot find a way to cancel.","signal":"cancellation friction"},
+{"category":"subscription","date":"2025","platform":"Trustpilot","source":"Trustpilot","quote":"the support is run exclusively by a lunatic AI","signal":"AI-only support frustration"},
+{"category":"subscription","date":"2025-05","platform":"Trustpilot/BBB","source":"Trustpilot","quote":"the absolute runaround I've been getting the last 24 hours trying to deal with... AI customer support","signal":"MG owner, launch week"},
+{"category":"hardware","date":"2025-05","platform":"Reddit/Forum/X","source":"TechRadar","quote":"the device sensors stop working just hours after the Whoop MG is set up... isn't responsive even when it's fully charged","signal":"widespread MG failures at launch"},
+{"category":"hardware","date":"2025-2026","platform":"WHOOP Community","source":"WHOOP Community forum","quote":"WHOOP 5.0 Not Charging, But Battery Pack is Charged","signal":"cross-generation charging thread"},
+{"category":"hardware","date":"2025-2026","platform":"Trustpilot","source":"Trustpilot","quote":"The strap has broken within a few months. The connecting part for the strap and the device is so flimsy and has widened.","signal":"band/clasp durability"},
+{"category":"recovery_accuracy","date":"ongoing","platform":"Blog","source":"Fellrnr","quote":"The WHOOP recovery score is simply based on overnight HRV... This is overly simplistic at best, and I've found it generally unhelpful.","signal":"independent reviewer"},
+{"category":"recovery_accuracy","date":"ongoing","platform":"App Store","source":"App Store review","quote":"always demand[s] I sleep 9 hours despite full recovery and more than enough restorative sleep at 7.5 hours","signal":"functional-fitness user"},
+{"category":"strain_undercounting","date":"ongoing","platform":"WHOOP Community","source":"WHOOP Community forum","quote":"got a strain of 20 on one weightlifting session and 4.2 on the next... usually give me something between 12 and...","signal":"strain instability after update"},
+{"category":"strain_undercounting","date":"2026","platform":"Review site","source":"road.cc (WHOOP 5.0 MG review)","quote":"for strength workouts, the Whoop 5.0 MG underreported my heart rate, reducing the strain score from what it should have been.","signal":"acknowledged limitation"},
+{"category":"hr_accuracy","date":"2026","platform":"WHOOP.com","source":"WHOOP Heart Rate Algorithm page","quote":"just delivered another across-the-board improvement to heart rate accuracy... the biggest gains... in weightlifting and functional fitness, HIIT, cycling, and golf","signal":"WHOOP's own acknowledgment of prior weakness"},
+{"category":"app_experience","date":"ongoing","platform":"Support doc","source":"WHOOP support article","quote":"Frequent Android Disconnects -- disable Battery Saver, deep optimization, background restrictions, enable background data","signal":"Android-only support article, no iOS equivalent"},
+{"category":"app_experience","date":"2025","platform":"App Store","source":"App Store review","quote":"Android app crashes constantly... crashes anytime I even open the app","signal":"Android reliability"},
+{"category":"app_experience","date":"2025-2026","platform":"Review","source":"The5KRunner","quote":"an abomination","signal":"long-time user on homescreen redesign"},
+{"category":"sleep_accuracy","date":"2026","platform":"BBB","source":"BBB complaint","quote":"The whoop app on my iPhone fails to show my data (sleep and all other data) for most of the nights when I had the device on my wrist very tightly","signal":"sync/off-body detection, not staging algorithm"},
+{"category":"bpi_fda","date":"2025-07-14","platform":"FDA","source":"FDA Warning Letter CMS #709755","quote":"marketed... without marketing clearance or approval, in violation of the Federal Food, Drug, and Cosmetic Act","signal":"formal FDA warning to CEO Will Ahmed"},
+{"category":"bpi_fda","date":"2026-06","platform":"Press","source":"STAT/Boston Globe (quoting CEO)","quote":"We won't let regulatory overreach dictate how people access their own health data","signal":"CEO Will Ahmed public response"},
+{"category":"bpi_fda","date":"2025-11-18","platform":"Court filing","source":"Rowe v. Whoop, Inc., N.D. Cal. 3:25-cv-09910","quote":"an unauthorized medical device","signal":"putative class action, anchored on FDA letter"}
+];
+
+const teamPillClass = { "Algorithms":"alg", "Hardware Product":"hw", "Healthcare Product":"hc" };
+function pillFor(team){
+  for(const k in teamPillClass){ if(team.indexOf(k) === 0) return teamPillClass[k]; }
+  return "gen";
+}
+function fmtUSD(n){ return "$" + (n/1e6).toFixed(2) + "M"; }
+
+Chart.defaults.color = "#9aa3ad";
+Chart.defaults.borderColor = "#2a2f37";
+Chart.defaults.font.family = "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto";
+
+// 1. Churn-risk ranked bar
+const cats = CATEGORY_KPIS.categories;
+new Chart(document.getElementById('churnBar'), {
+  type:'bar',
+  data:{
+    labels: cats.map(c=>c.name),
+    datasets:[{
+      data: cats.map(c=>c.churn_risk_index_0_100),
+      backgroundColor: cats.map(c=> c.id==='subscription' || c.id==='hardware' || c.id==='bpi_fda' ? '#ff6b4a' : '#4ac1ff'),
+      borderRadius:4,
+    }]
+  },
+  options:{
+    indexAxis:'y',
+    plugins:{
+      legend:{display:false},
+      tooltip:{ callbacks:{ label: (ctx)=> {
+        const c = cats[ctx.dataIndex];
+        return [`Churn-risk index: ${c.churn_risk_index_0_100}`, `Illustrative $ at risk: ${fmtUSD(c.illustrative_annual_revenue_at_risk_usd)}`];
+      }}}
+    },
+    scales:{ x:{ title:{display:true, text:'Churn-risk index (0-100)'} } }
+  }
+});
+
+// 2. Quadrant scatter
+new Chart(document.getElementById('quadrant'), {
+  type:'bubble',
+  data:{
+    datasets: cats.map(c=>({
+      label: c.name,
+      data: [{x:c.volume_share_pct, y:c.churn_language_share_pct, r: 6 + c.severity_1_5*3}],
+      backgroundColor: pillFor(c.team)==='alg' ? 'rgba(74,193,255,.55)' : pillFor(c.team)==='hw' ? 'rgba(255,180,107,.55)' : pillFor(c.team)==='hc' ? 'rgba(255,143,192,.55)' : 'rgba(127,224,168,.55)'
+    }))
+  },
+  options:{
+    plugins:{
+      legend:{display:false},
+      tooltip:{ callbacks:{ label:(ctx)=> ctx.dataset.label + `: ${ctx.raw.x}% of volume, ${ctx.raw.y}% churn-language` } }
+    },
+    scales:{
+      x:{ title:{display:true, text:'% of total complaint volume'}, min:0, max:24 },
+      y:{ title:{display:true, text:'% of theme containing cancel/switch language'}, min:0, max:70 }
+    }
+  }
+});
+
+// 3. Time series
+new Chart(document.getElementById('timeseries'), {
+  type:'line',
+  data:{
+    labels: TIMESERIES.map(r=>r.month),
+    datasets:[
+      {label:'Subscription/Billing/Support', data:TIMESERIES.map(r=>r.subscription_billing_support), borderColor:'#ff6b4a', backgroundColor:'transparent', tension:.3},
+      {label:'Hardware reliability', data:TIMESERIES.map(r=>r.hardware_reliability), borderColor:'#ffb84a', backgroundColor:'transparent', tension:.3},
+      {label:'App experience', data:TIMESERIES.map(r=>r.app_experience), borderColor:'#7fe0a8', backgroundColor:'transparent', tension:.3},
+      {label:'BPI / Healthcare-regulatory', data:TIMESERIES.map(r=>r.bpi_healthcare_regulatory), borderColor:'#ff8fc0', backgroundColor:'transparent', tension:.3},
+      {label:'Accuracy metrics (blended)', data:TIMESERIES.map(r=>r.accuracy_metrics_blended), borderColor:'#4ac1ff', backgroundColor:'transparent', tension:.3, borderDash:[4,3]},
+    ]
+  },
+  options:{
+    plugins:{
+      legend:{position:'bottom', labels:{boxWidth:12, font:{size:11}}},
+      tooltip:{ callbacks:{ afterBody:(items)=>{
+        const ev = TIMESERIES[items[0].dataIndex].event;
+        return ev ? ['Event: ' + ev] : [];
+      }}}
+    },
+    scales:{ y:{ title:{display:true, text:'Relative complaint-intensity index (0-100)'} } }
+  }
+});
+
+// 4. Platform stacked bar
+new Chart(document.getElementById('platform'), {
+  type:'bar',
+  data:{
+    labels:['iOS','Android'],
+    datasets:[
+      {label:'Product / UI / support complaints', data:[PLATFORM.ios.complaint_mix.product_ui_support, PLATFORM.android.complaint_mix.product_ui_support], backgroundColor:'#4ac1ff'},
+      {label:'OS-level sync/crash complaints', data:[PLATFORM.ios.complaint_mix.os_level_sync_crash, PLATFORM.android.complaint_mix.os_level_sync_crash], backgroundColor:'#ff6b4a'},
+    ]
+  },
+  options:{
+    indexAxis:'y',
+    plugins:{ legend:{position:'bottom', labels:{boxWidth:12, font:{size:11}}} },
+    scales:{ x:{ stacked:true, max:100, title:{display:true, text:'% of platform-tagged app-experience complaints'} }, y:{ stacked:true } }
+  }
+});
+
+// 5. Advanced Labs funnel (horizontal bar as funnel proxy)
+const LABS_FUNNEL = [
+  {stage:"Waitlist joined", value:350000, real:true},
+  {stage:"Invited & test booked", value:140000, real:false},
+  {stage:"Test completed", value:91000, real:false},
+  {stage:"Results reviewed in-app", value:77000, real:false},
+];
+new Chart(document.getElementById('labsFunnel'), {
+  type:'bar',
+  data:{
+    labels: LABS_FUNNEL.map(f=>f.stage),
+    datasets:[{
+      data: LABS_FUNNEL.map(f=>f.value),
+      backgroundColor: LABS_FUNNEL.map(f=> f.real ? '#ff8fc0' : 'rgba(255,143,192,.35)'),
+      borderRadius:4,
+    }]
+  },
+  options:{
+    indexAxis:'y',
+    plugins:{
+      legend:{display:false},
+      tooltip:{ callbacks:{ label:(ctx)=>{
+        const f = LABS_FUNNEL[ctx.dataIndex];
+        return `${f.value.toLocaleString()} ${f.real ? '(WHOOP-published)' : '(illustrative estimate)'}`;
+      }}}
+    },
+    scales:{ x:{ title:{display:true, text:'Members (solid = real, faded = illustrative)'} } }
+  }
+});
+
+// Revenue table
+const tbody = document.querySelector('#revTable tbody');
+cats.forEach(c=>{
+  const tr = document.createElement('tr');
+  tr.innerHTML = `<td>${c.name}</td><td><span class="pill ${pillFor(c.team)}">${c.team}</span></td><td>${c.churn_risk_index_0_100}</td><td>${fmtUSD(c.illustrative_annual_revenue_at_risk_usd)}</td>`;
+  tbody.appendChild(tr);
+});
+
+// Quote filters
+const catNames = {"subscription":"Subscription","hardware":"Hardware","recovery_accuracy":"Recovery accuracy","strain_undercounting":"Strain","hr_accuracy":"HR accuracy","app_experience":"App experience","sleep_accuracy":"Sleep","band_durability":"Band/clasp","bpi_fda":"BPI/FDA"};
+const filterBar = document.getElementById('quoteFilters');
+const listEl = document.getElementById('quoteList');
+let activeCat = 'all';
+
+function renderQuotes(){
+  listEl.innerHTML = '';
+  const items = QUOTES.filter(q=> activeCat==='all' || q.category===activeCat);
+  items.forEach(q=>{
+    const div = document.createElement('div');
+    div.className = 'quote';
+    div.innerHTML = `<div class="meta">${catNames[q.category]||q.category} &middot; ${q.source} &middot; ${q.date} &middot; ${q.signal}</div><div class="text">&ldquo;${q.quote}&rdquo;</div>`;
+    listEl.appendChild(div);
+  });
+}
+['all', ...Object.keys(catNames)].forEach(key=>{
+  const b = document.createElement('button');
+  b.textContent = key==='all' ? 'All' : catNames[key];
+  if(key===activeCat) b.classList.add('active');
+  b.onclick = ()=>{
+    activeCat = key;
+    [...filterBar.children].forEach(c=>c.classList.remove('active'));
+    b.classList.add('active');
+    renderQuotes();
+  };
+  filterBar.appendChild(b);
+});
+renderQuotes();
+</script>
+</body>
+</html>
